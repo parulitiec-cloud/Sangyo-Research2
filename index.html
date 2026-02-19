@@ -4,155 +4,289 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sangyo Research</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    scroll-behavior: smooth;
+    background: #ffffff;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0A2540;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0A2540;
+}
+
+/* HERO */
+.hero {
+    padding: 120px 10%;
+    text-align: center;
+    background: #0A2540;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero button {
+    padding: 14px 30px;
+    background: white;
+    color: #0A2540;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #e6e6e6;
+}
+
+/* SECTION */
+section {
+    padding: 90px 10%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 50px;
+    color: #0A2540;
+}
+
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* PROCESS */
+.process-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.process-list li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* CONTACT */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background: #0A2540;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #081c30;
+}
+
+/* FOOTER */
+footer {
+    background: #0A2540;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
     header {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
 
 <header>
-    
+    <div class="logo">
+        <img src="logo.png" alt="Sangyo Logo">
+        Sangyo Research
+    </div>
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-        background: #0A2540;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-    }
-    nav {
-        background: #133B5C;
-        padding: 10px;
-        text-align: center;
-    }
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
-    }
-    nav a:hover {
-        text-decoration: underline;
-    }
-    section {
-        padding: 40px 20px;
-        max-width: 1100px;
-        margin: auto;
-    }
-    .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    .card {
-        background: #f4f4f4;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-        background: #0A2540;
-        color: white;
-        text-align: center;
-        padding: 15px;
-    }
-    button {
-        background: #0A2540;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #133B5C;
-    }
-    form input, form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-</style>
-</head>
-<body>
+<section class="hero">
+    <h1>Strategic Insights That Drive Growth</h1>
+    <p>We help organizations unlock data-driven decisions through market intelligence, customer analytics, and research excellence.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Work With Us</button>
+</section>
 
-<header>
-    <img src="logo.png" alt="Sangyo Research Logo" style="height:60px;">
-    <h1>Sangyo Research</h1>
-    <p>Turning Data Into Strategic Growth</p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#process">Our Process</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
+<section id="about" class="fade">
     <h2>About Us</h2>
-    <p>
-        Sangyo is a full-service marketing research firm dedicated to helping businesses
-        understand their customers, markets, and competitors. We provide data-driven insights
-        that guide smart business decisions and fuel sustainable growth.
+    <p style="max-width:700px;margin:auto;text-align:center;">
+        Sangyo Research is a boutique consulting firm delivering strategic research,
+        competitive intelligence, and advanced analytics for forward-thinking organizations.
     </p>
 </section>
 
-<section id="services">
+<section id="services" class="fade">
     <h2>Our Services</h2>
     <div class="services">
         <div class="card">
-            <h3>Market Analysis</h3>
-            <p>Comprehensive research to identify trends, opportunities, and competitive positioning.</p>
+            <h3>Market Intelligence</h3>
+            <p>Comprehensive industry research and competitive benchmarking.</p>
         </div>
         <div class="card">
-            <h3>Customer Insights</h3>
-            <p>Surveys, focus groups, and interviews to understand customer behavior and preferences.</p>
+            <h3>Customer Analytics</h3>
+            <p>Behavioral insights through surveys and data modeling.</p>
         </div>
         <div class="card">
-            <h3>Brand Research</h3>
-            <p>Measure brand awareness, perception, and market impact.</p>
-        </div>
-        <div class="card">
-            <h3>Data Analytics</h3>
-            <p>Advanced analytics and reporting for actionable strategic decisions.</p>
+            <h3>Brand Strategy</h3>
+            <p>Measure positioning, awareness, and growth opportunities.</p>
         </div>
     </div>
 </section>
 
-<section id="process">
-    <h2>Our Research Process</h2>
-    <ol>
-        <li><strong>Define Objectives:</strong> Understand your business goals.</li>
-        <li><strong>Design Research:</strong> Select the right methodology.</li>
-        <li><strong>Collect Data:</strong> Use reliable tools and techniques.</li>
-        <li><strong>Analyze Insights:</strong> Transform data into clear recommendations.</li>
-        <li><strong>Deliver Results:</strong> Actionable reports and presentations.</li>
-    </ol>
+<section id="process" class="fade">
+    <h2>Our Process</h2>
+    <ul class="process-list">
+        <li><strong>1.</strong> Define Objectives</li>
+        <li><strong>2.</strong> Design Methodology</li>
+        <li><strong>3.</strong> Collect & Analyze Data</li>
+        <li><strong>4.</strong> Deliver Strategic Recommendations</li>
+    </ul>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade">
     <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
     </form>
 </section>
 
 <footer>
-    <p>&copy; 2026 Sangyo Research | All Rights Reserved</p>
+    © 2026 Sangyo Research | All Rights Reserved
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+    faders.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < trigger){
+            el.classList.add('visible');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
